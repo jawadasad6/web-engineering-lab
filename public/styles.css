@@ -1,17 +1,160 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f2f5;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h1 {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: #f0f2f5;
   color: #333;
-  padding: 20px;
+  line-height: 1.5;
+}
+
+header,
+main,
+footer {
+  max-inline-size: 70rem;
+  margin-inline: auto;
+}
+
+header {
+  padding-block: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #0645ad;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #c2410c;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  padding: 0.5rem 1rem;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #0645ad;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+main {
+  padding-inline: 1rem;
+}
+
+section {
+  margin-block: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1rem;
+  background: white;
+}
+
+caption {
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+th,
+td {
+  border: 1px solid #999;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background: #e2e8f0;
+}
+
+figure {
+  margin-inline: 0;
+}
+
+figure svg {
+  display: block;
+  margin-block-end: 0.5rem;
+}
+
+form p {
+  margin-block: 0.5rem 1rem;
+}
+
+label {
+  display: block;
+  margin-block-end: 0.25rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+  max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+}
+
+fieldset {
+  margin-block: 1rem;
+  padding: 1rem;
+}
+
+fieldset p label {
+  display: inline;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  background: #0645ad;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #043580;
+}
+
+footer {
+  margin-block-start: 2rem;
+  padding-block: 1rem;
+  border-top: 1px solid #999;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

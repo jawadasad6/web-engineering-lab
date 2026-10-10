@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,9 +7,122 @@
     <title>Web Engineering Lab</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <!-- The JavaScript will target this heading -->
-    <h1 id="greeting-heading">Loading greeting...</h1>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+      <h1 id="greeting">Hello, Student!</h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a class="nav-link" href="#office-hours">Office Hours</a></li>
+          <li><a class="nav-link" href="#send-feedback">Send Feedback</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="office-hours">
+        <h2 id="schedule-heading">Office Hours</h2>
+
+        <figure>
+          <svg
+            viewBox="0 0 24 24"
+            width="32"
+            height="32"
+            role="img"
+            aria-labelledby="calendar-title"
+          >
+            <title id="calendar-title">Calendar icon</title>
+            <rect x="3" y="5" width="18" height="16" rx="2"
+              fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M7 3v4 M17 3v4 M3 10h18"
+              fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+          <figcaption>Check the available office hours below.</figcaption>
+        </figure>
+
+        <table>
+          <caption>Instructor Office Hours</caption>
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td><time datetime="10:00">10:00 AM</time> – <time datetime="12:00">12:00 PM</time></td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td><time datetime="13:00">1:00 PM</time> – <time datetime="15:00">3:00 PM</time></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 300 4"
+        width="100%"
+        height="4"
+      >
+        <path d="M0 2 H300" stroke="currentColor" stroke-width="2" />
+      </svg>
+
+      <section id="send-feedback">
+        <h2>Send Feedback</h2>
+
+        <form>
+          <p>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </p>
+
+          <p>
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              aria-describedby="email-hint"
+            />
+            <small id="email-hint">Enter a valid email address.</small>
+          </p>
+
+          <fieldset>
+            <legend>Topic</legend>
+
+            <p>
+              <input id="topic-lab" name="topic" type="radio" value="lab" required />
+              <label for="topic-lab">Lab content</label>
+            </p>
+
+            <p>
+              <input id="topic-other" name="topic" type="radio" value="other" />
+              <label for="topic-other">Something else</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </p>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <address>
+        Contact: <a href="mailto:student@example.com">student@example.com</a>
+      </address>
+    </footer>
 
     <script src="script.js"></script>
   </body>
